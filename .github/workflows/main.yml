@@ -1,13 +1,14 @@
 name: Get Postgres Dynamic Secrets
+
 'on': push
+
 jobs:
   fetch_postgres_dynamic_secrets:
-  runs-on: self-hosted
-  name: Fetch Postgres Dynamic Secrets
-  permissions:
-    id-token: write
-    contents: read
-  steps:
+    runs-on: self-hosted
+    permissions:
+      id-token: write
+      contents: read
+    steps:
     - name: Fetch dynamic secrets from Akeyless
       id: fetch-dynamic-secrets
       uses: akeyless-community/akeyless-github-action@v1.0.1
